@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { GUIDE_SLUGS } from "@/data/guides";
-
-const BASE_URL = "https://www.chabiseo.com";
+import { BASE_URL } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();

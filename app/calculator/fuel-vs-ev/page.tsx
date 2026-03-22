@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { FuelVsEvCalc } from "@/components/calculators/FuelVsEvCalc";
 import { NextQuestions } from "@/components/layout/NextQuestions";
-
-const BASE_URL = "https://www.chabiseo.com";
+import { BASE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "연료비 비교 계산기 — 가솔린·하이브리드·EV 월 비용 비교",

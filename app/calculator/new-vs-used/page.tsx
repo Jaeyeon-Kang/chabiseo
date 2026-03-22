@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { NewVsUsedCalc } from "@/components/calculators/NewVsUsedCalc";
 import { NextQuestions } from "@/components/layout/NextQuestions";
-
-const BASE_URL = "https://www.chabiseo.com";
+import { BASE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "신차 vs 중고차 총소유비 비교 계산기",

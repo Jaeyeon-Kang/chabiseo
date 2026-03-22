@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { FirstCarBudgetCalc } from "@/components/calculators/FirstCarBudgetCalc";
 import { NextQuestions } from "@/components/layout/NextQuestions";
-
-const BASE_URL = "https://www.chabiseo.com";
+import { BASE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "첫차 총예산 계산기 — 차값 외 숨겨진 비용 포함",

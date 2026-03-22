@@ -3,8 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuideBySlug, GUIDE_SLUGS } from "@/data/guides";
 import { NextQuestions } from "@/components/layout/NextQuestions";
-
-const BASE_URL = "https://www.chabiseo.com";
+import { BASE_URL } from "@/lib/site-url";
 
 export async function generateStaticParams() {
   return GUIDE_SLUGS.map((slug) => ({ slug }));
