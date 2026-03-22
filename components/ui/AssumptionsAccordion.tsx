@@ -22,7 +22,7 @@ export function AssumptionsAccordion({ assumptions }: AssumptionsAccordionProps)
         <ul className="px-4 pb-4 space-y-1.5 bg-slate-50">
           {assumptions.map((a, i) => (
             <li key={i} className="text-xs text-slate-500 flex gap-2">
-              <span className="text-slate-300 shrink-0">•</span>
+              <span className="text-slate-400 shrink-0">•</span>
               <span>{a}</span>
             </li>
           ))}

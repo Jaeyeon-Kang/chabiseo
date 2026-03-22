@@ -9,12 +9,13 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
       <header className="space-y-2">
-        <h1 className="text-2xl font-bold text-slate-100">차비서 소개</h1>
+        <p className="text-sm text-blue-600 font-medium">소개</p>
+        <h1 className="text-2xl font-bold text-slate-900">차비서 소개</h1>
       </header>
 
-      <div className="prose prose-invert prose-sm max-w-none space-y-6 text-slate-300 leading-relaxed">
+      <div className="space-y-6 text-[15px] text-slate-600 leading-relaxed">
         <section className="space-y-3">
-          <h2 className="text-lg font-semibold text-slate-200">차비서는 어떤 사이트인가요?</h2>
+          <h2 className="text-base font-semibold text-slate-800">차비서는 어떤 사이트인가요?</h2>
           <p>
             차비서는 자동차와 관련된 비용 의사결정을 돕는 정보 허브입니다.
             "이 차 사면 한 달에 얼마나 드나", "브레이크패드 지금 갈아야 하나", "EV가 진짜 더 저렴한가"처럼
@@ -23,7 +24,7 @@ export default function AboutPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-lg font-semibold text-slate-200">정확한 실시간 견적이 아닙니다</h2>
+          <h2 className="text-base font-semibold text-slate-800">정확한 실시간 견적이 아닙니다</h2>
           <p>
             차비서의 수치는 지역별 실시간 공임이나 당일 부품 단가를 반영하지 않습니다.
             대신 제조사 매뉴얼, 국토교통부·한국전력 공공 통계, 서비스센터 공시가를 바탕으로
@@ -36,7 +37,7 @@ export default function AboutPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-lg font-semibold text-slate-200">데이터 업데이트 정책</h2>
+          <h2 className="text-base font-semibold text-slate-800">데이터 업데이트 정책</h2>
           <p>
             연료 단가, 충전 요금, 세금 기준 등 시간에 따라 변동되는 수치는
             월 1~2회 검토 후 업데이트됩니다. 각 페이지 하단에 마지막 업데이트 날짜를 표시합니다.

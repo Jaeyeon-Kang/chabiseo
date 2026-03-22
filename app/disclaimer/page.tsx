@@ -8,8 +8,12 @@ export const metadata: Metadata = {
 export default function DisclaimerPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-6">
-      <h1 className="text-2xl font-bold text-slate-100">면책고지</h1>
-      <div className="text-sm text-slate-400 leading-relaxed space-y-4">
+      <header className="space-y-2">
+        <p className="text-sm text-blue-600 font-medium">정책</p>
+        <h1 className="text-2xl font-bold text-slate-900">면책고지</h1>
+      </header>
+
+      <div className="space-y-4 text-[15px] text-slate-600 leading-relaxed">
         <p>
           차비서(이하 "본 사이트")에서 제공하는 모든 정보와 계산 결과는
           교육적·참고적 목적으로만 제공됩니다.
@@ -25,7 +29,7 @@ export default function DisclaimerPage() {
         <p>
           중요한 비용 결정은 반드시 전문 정비사, 보험 설계사, 공인된 딜러에게 직접 확인하시기 바랍니다.
         </p>
-        <p className="text-slate-600">최종 업데이트: 2026-03-22</p>
+        <p className="text-sm text-slate-400">최종 업데이트: 2026-03-22</p>
       </div>
     </div>
   );

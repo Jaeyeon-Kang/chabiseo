@@ -109,7 +109,7 @@ export default function HomePage() {
             <Link
               key={c.href}
               href={c.href}
-              className={`group flex flex-col items-center gap-2 py-5 bg-white border border-slate-200 ${c.accent} rounded-2xl transition-all hover:shadow-sm`}
+              className={`group flex flex-col items-center gap-2 py-5 bg-white border border-slate-200 ${c.accent} rounded-2xl transition-all shadow-sm hover:shadow-md`}
             >
               <span className="text-2xl">{c.icon}</span>
               <span className="text-sm text-slate-600 font-medium group-hover:text-slate-900 transition-colors">{c.label}</span>

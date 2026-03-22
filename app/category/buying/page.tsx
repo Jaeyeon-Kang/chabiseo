@@ -16,7 +16,7 @@ export default function BuyingCategoryPage() {
       <header className="space-y-2">
         <p className="text-sm text-blue-600 font-medium">카테고리</p>
         <h1 className="text-2xl font-bold text-slate-900">🏷️ 살 때</h1>
-        <p className="text-[15px] text-slate-400 leading-relaxed">
+        <p className="text-[15px] text-slate-600 leading-relaxed">
           차를 구매하기 전에 꼭 알아야 할 비용 정보입니다.
         </p>
       </header>
@@ -30,14 +30,14 @@ export default function BuyingCategoryPage() {
         )}
       </div>
 
-      <div className="border-t border-slate-800 pt-6 space-y-2">
+      <div className="border-t border-slate-200 pt-6 space-y-2">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">관련 계산기</p>
-        <Link href="/calculator/first-car-budget" className="flex items-center gap-3 p-4 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 rounded-2xl text-[15px] text-slate-300 hover:text-slate-100 transition-colors group">
+        <Link href="/calculator/first-car-budget" className="flex items-center gap-3 p-4 bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-300 rounded-2xl text-[15px] text-slate-700 hover:text-blue-600 transition-colors group">
           <span>🚗</span>
           <span className="flex-1">첫차 총예산 계산기</span>
           <span className="text-slate-600 group-hover:text-blue-400 transition-colors">→</span>
         </Link>
-        <Link href="/calculator/new-vs-used" className="flex items-center gap-3 p-4 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 rounded-2xl text-[15px] text-slate-300 hover:text-slate-100 transition-colors group">
+        <Link href="/calculator/new-vs-used" className="flex items-center gap-3 p-4 bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-300 rounded-2xl text-[15px] text-slate-700 hover:text-blue-600 transition-colors group">
           <span>🔄</span>
           <span className="flex-1">신차 vs 중고차 총소유비 비교</span>
           <span className="text-slate-600 group-hover:text-blue-400 transition-colors">→</span>

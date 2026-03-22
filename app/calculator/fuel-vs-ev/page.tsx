@@ -12,9 +12,9 @@ export default function FuelVsEvPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
       <header className="space-y-2">
-        <p className="text-sm text-blue-400 font-medium">계산기</p>
-        <h1 className="text-2xl font-bold text-slate-100">연료비 비교 계산기</h1>
-        <p className="text-[15px] text-slate-400 leading-relaxed">
+        <p className="text-sm text-blue-600 font-medium">계산기</p>
+        <h1 className="text-2xl font-bold text-slate-900">연료비 비교 계산기</h1>
+        <p className="text-[15px] text-slate-600 leading-relaxed">
           같은 거리를 달렸을 때 가솔린·하이브리드·EV의 월 연료·충전비를 나란히 비교합니다.
           차 교체를 고려 중이라면 먼저 이 숫자를 확인하세요.
         </p>
