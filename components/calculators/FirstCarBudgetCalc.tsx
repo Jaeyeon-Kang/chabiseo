@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { FuelType } from "@/types";
 import {
   calcFirstCarBudget,
@@ -8,6 +8,7 @@ import {
 } from "@/lib/calc-first-car-budget";
 import { CostBreakdownCard } from "@/components/ui/CostBreakdownCard";
 import { AssumptionsAccordion } from "@/components/ui/AssumptionsAccordion";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const FUEL_OPTIONS: { value: FuelType; label: string }[] = [
   { value: "gasoline", label: "휘발유" },
@@ -26,16 +27,22 @@ export function FirstCarBudgetCalc() {
   const [hasParking, setHasParking] = useState(true);
   const [result, setResult] = useState<FirstCarBudgetResult | null>(null);
 
-  function handleCalc() {
-    setResult(calcFirstCarBudget({ carPrice, fuelType, monthlyMileageKm: monthlyMileage, hasParking }));
-  }
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setResult(calcFirstCarBudget({ carPrice, fuelType, monthlyMileageKm: monthlyMileage, hasParking }));
+    }, 150);
+    return () => clearTimeout(id);
+  }, [carPrice, fuelType, monthlyMileage, hasParking]);
+
+  const yearMin = useCountUp(result?.firstYearTotal.min ?? 0);
+  const yearMax = useCountUp(result?.firstYearTotal.max ?? 0);
+  const monthMin = useCountUp(result?.monthlyTotal.min ?? 0);
+  const monthMax = useCountUp(result?.monthlyTotal.max ?? 0);
 
   return (
     <div className="space-y-6">
-      {/* 입력 */}
       <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-5">
 
-        {/* 차량 구매가 */}
         <div className="space-y-2">
           <label className="flex justify-between text-sm text-slate-600">
             <span>차량 구매가</span>
@@ -52,7 +59,6 @@ export function FirstCarBudgetCalc() {
           </div>
         </div>
 
-        {/* 연료 타입 */}
         <div className="space-y-2">
           <label className="text-sm text-slate-600">연료 타입</label>
           <div className="flex flex-wrap gap-2">
@@ -72,7 +78,6 @@ export function FirstCarBudgetCalc() {
           </div>
         </div>
 
-        {/* 월 주행거리 */}
         <div className="space-y-2">
           <label className="flex justify-between text-sm text-slate-600">
             <span>월 주행거리</span>
@@ -89,7 +94,6 @@ export function FirstCarBudgetCalc() {
           </div>
         </div>
 
-        {/* 주차 환경 */}
         <div className="space-y-2">
           <label className="text-sm text-slate-600">주차 환경</label>
           <div className="flex gap-2">
@@ -111,30 +115,21 @@ export function FirstCarBudgetCalc() {
             ))}
           </div>
         </div>
-
-        <button
-          onClick={handleCalc}
-          className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors"
-        >
-          총예산 계산하기
-        </button>
       </div>
 
-      {/* 결과 */}
       {result && (
         <div className="space-y-4">
-          {/* 핵심 요약 */}
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5 space-y-3">
             <p className="text-xs text-slate-500">첫해 예상 총비용</p>
             <p className="text-3xl font-bold text-slate-900 tabular-nums leading-tight">
-              {fmt(result.firstYearTotal.min)} ~<br />
-              {fmt(result.firstYearTotal.max)}
+              {fmt(yearMin)} ~<br />
+              {fmt(yearMax)}
               <span className="text-base font-normal text-slate-500 ml-1">원</span>
             </p>
             <p className="text-sm text-slate-500">
               월 환산:{" "}
               <span className="text-slate-800 font-semibold">
-                {fmt(result.monthlyTotal.min)} ~ {fmt(result.monthlyTotal.max)}원/월
+                {fmt(monthMin)} ~ {fmt(monthMax)}원/월
               </span>
             </p>
           </div>

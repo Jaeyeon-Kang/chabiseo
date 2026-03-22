@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import fuelDefaults from "@/data/fuel-price-defaults.json";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const fmt = (n: number) => n.toLocaleString("ko-KR");
 
@@ -20,27 +21,38 @@ export function FuelVsEvCalc() {
   const [homeChargeRatio, setHomeChargeRatio] = useState(70);
   const [result, setResult] = useState<CompareRow[] | null>(null);
 
-  function handleCalc() {
-    const f = fuelDefaults as unknown as Record<string, number>;
+  useEffect(() => {
+    const id = setTimeout(() => {
+      const f = fuelDefaults as unknown as Record<string, number>;
 
-    const gasMin = Math.round((monthlyMileage / (DEFAULT_EFF.gasoline * 1.1)) * f.gasoline);
-    const gasMax = Math.round((monthlyMileage / (DEFAULT_EFF.gasoline * 0.9)) * f.gasoline);
+      const gasMin = Math.round((monthlyMileage / (DEFAULT_EFF.gasoline * 1.1)) * f.gasoline);
+      const gasMax = Math.round((monthlyMileage / (DEFAULT_EFF.gasoline * 0.9)) * f.gasoline);
+      const hybMin = Math.round((monthlyMileage / (DEFAULT_EFF.hybrid * 1.1)) * f.gasoline);
+      const hybMax = Math.round((monthlyMileage / (DEFAULT_EFF.hybrid * 0.9)) * f.gasoline);
 
-    const hybMin = Math.round((monthlyMileage / (DEFAULT_EFF.hybrid * 1.1)) * f.gasoline);
-    const hybMax = Math.round((monthlyMileage / (DEFAULT_EFF.hybrid * 0.9)) * f.gasoline);
+      const kwh = monthlyMileage / DEFAULT_EFF.ev;
+      const homeRatio = homeChargeRatio / 100;
+      const publicRatio = 1 - homeRatio;
+      const evMin = Math.round(kwh * (homeRatio * f.ev_home_slow_night + publicRatio * f.ev_public_slow));
+      const evMax = Math.round(kwh * (homeRatio * f.ev_home_slow + publicRatio * f.ev_public_fast_50kw));
 
-    const kwh = monthlyMileage / DEFAULT_EFF.ev;
-    const homeRatio = homeChargeRatio / 100;
-    const publicRatio = 1 - homeRatio;
-    const evMin = Math.round(kwh * (homeRatio * f.ev_home_slow_night + publicRatio * f.ev_public_slow));
-    const evMax = Math.round(kwh * (homeRatio * f.ev_home_slow + publicRatio * f.ev_public_fast_50kw));
+      setResult([
+        { label: "가솔린", monthlyMin: gasMin, monthlyMax: gasMax, barColor: "bg-orange-400", textColor: "text-orange-600" },
+        { label: "하이브리드", monthlyMin: hybMin, monthlyMax: hybMax, barColor: "bg-amber-400", textColor: "text-amber-600" },
+        { label: "전기차(EV)", monthlyMin: evMin, monthlyMax: evMax, barColor: "bg-blue-500", textColor: "text-blue-600" },
+      ]);
+    }, 150);
+    return () => clearTimeout(id);
+  }, [monthlyMileage, homeChargeRatio]);
 
-    setResult([
-      { label: "가솔린", monthlyMin: gasMin, monthlyMax: gasMax, barColor: "bg-orange-400", textColor: "text-orange-600" },
-      { label: "하이브리드", monthlyMin: hybMin, monthlyMax: hybMax, barColor: "bg-amber-400", textColor: "text-amber-600" },
-      { label: "전기차(EV)", monthlyMin: evMin, monthlyMax: evMax, barColor: "bg-blue-500", textColor: "text-blue-600" },
-    ]);
-  }
+  // 6 countup hooks — always called unconditionally
+  const gas0 = useCountUp(result?.[0]?.monthlyMin ?? 0);
+  const gas1 = useCountUp(result?.[0]?.monthlyMax ?? 0);
+  const hyb0 = useCountUp(result?.[1]?.monthlyMin ?? 0);
+  const hyb1 = useCountUp(result?.[1]?.monthlyMax ?? 0);
+  const ev0  = useCountUp(result?.[2]?.monthlyMin ?? 0);
+  const ev1  = useCountUp(result?.[2]?.monthlyMax ?? 0);
+  const countUpPairs = [[gas0, gas1], [hyb0, hyb1], [ev0, ev1]];
 
   return (
     <div className="space-y-6">
@@ -77,20 +89,13 @@ export function FuelVsEvCalc() {
             <span>외부 충전만</span><span>집에서만 충전</span>
           </div>
         </div>
-
-        <button
-          onClick={handleCalc}
-          className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors"
-        >
-          비교하기
-        </button>
       </div>
 
       {result && (
         <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-5">
           <h3 className="text-base font-semibold text-slate-800">월 연료·충전비 비교</h3>
 
-          {result.map((row) => {
+          {result.map((row, i) => {
             const maxVal = Math.max(...result.map((r) => r.monthlyMax));
             const barWidth = Math.round((row.monthlyMax / maxVal) * 100);
             return (
@@ -98,12 +103,12 @@ export function FuelVsEvCalc() {
                 <div className="flex justify-between items-baseline">
                   <span className={`text-sm font-semibold ${row.textColor}`}>{row.label}</span>
                   <span className="text-sm font-semibold text-slate-700 tabular-nums">
-                    {fmt(row.monthlyMin)} ~ {fmt(row.monthlyMax)}원
+                    {fmt(countUpPairs[i][0])} ~ {fmt(countUpPairs[i][1])}원
                   </span>
                 </div>
                 <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
                   <div
-                    className={`h-full rounded-full transition-all ${row.barColor}`}
+                    className={`h-full rounded-full transition-all duration-300 ${row.barColor}`}
                     style={{ width: `${barWidth}%` }}
                   />
                 </div>
