@@ -70,7 +70,7 @@ export default function HomePage() {
             <Link
               key={c.href}
               href={c.href}
-              className="group flex gap-4 bg-slate-800 hover:bg-slate-750 border border-slate-700 hover:border-blue-600/60 rounded-2xl p-5 transition-all"
+              className="group flex gap-4 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 hover:border-blue-600/60 rounded-2xl p-5 transition-all"
             >
               <span className="text-2xl shrink-0 mt-0.5">{c.icon}</span>
               <div className="flex-1 min-w-0">

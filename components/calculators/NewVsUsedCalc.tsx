@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AssumptionsAccordion } from "@/components/ui/AssumptionsAccordion";
 
 const fmt = (n: number) => n.toLocaleString("ko-KR");
 
@@ -96,8 +97,11 @@ export function NewVsUsedCalc() {
           </label>
           <input type="range" min={10000000} max={80000000} step={1000000}
             value={newPrice} onChange={(e) => setNewPrice(Number(e.target.value))}
-            className="w-full accent-blue-500"
+            className="w-full"
           />
+          <div className="flex justify-between text-xs text-slate-600">
+            <span>1,000만원</span><span>8,000만원</span>
+          </div>
         </div>
 
         {/* 중고차 가격 */}
@@ -108,8 +112,12 @@ export function NewVsUsedCalc() {
           </label>
           <input type="range" min={3000000} max={50000000} step={500000}
             value={usedPrice} onChange={(e) => setUsedPrice(Number(e.target.value))}
-            className="w-full accent-emerald-500"
+            className="w-full"
+            style={{ "--thumb-color": "#10b981" } as React.CSSProperties}
           />
+          <div className="flex justify-between text-xs text-slate-600">
+            <span>300만원</span><span>5,000만원</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -121,8 +129,11 @@ export function NewVsUsedCalc() {
             </label>
             <input type="range" min={1} max={15} step={1}
               value={usedAge} onChange={(e) => setUsedAge(Number(e.target.value))}
-              className="w-full accent-blue-500"
+              className="w-full"
             />
+            <div className="flex justify-between text-xs text-slate-600">
+              <span>1년</span><span>15년</span>
+            </div>
           </div>
 
           {/* 보유 기간 */}
@@ -133,8 +144,11 @@ export function NewVsUsedCalc() {
             </label>
             <input type="range" min={1} max={10} step={1}
               value={holdYears} onChange={(e) => setHoldYears(Number(e.target.value))}
-              className="w-full accent-blue-500"
+              className="w-full"
             />
+            <div className="flex justify-between text-xs text-slate-600">
+              <span>1년</span><span>10년</span>
+            </div>
           </div>
         </div>
 
@@ -178,21 +192,7 @@ export function NewVsUsedCalc() {
             </p>
           </div>
 
-          <div className="border border-slate-700 rounded-xl overflow-hidden">
-            <details className="group">
-              <summary className="flex justify-between items-center px-4 py-3 text-sm text-slate-400 hover:text-slate-200 cursor-pointer hover:bg-slate-800 transition-colors">
-                <span>계산 기준 보기</span>
-                <span className="text-slate-500">▼</span>
-              </summary>
-              <ul className="px-4 pb-4 space-y-1.5 bg-slate-800/50">
-                {result.assumptions.map((a, i) => (
-                  <li key={i} className="text-xs text-slate-400 flex gap-2">
-                    <span className="text-slate-600 shrink-0">•</span>{a}
-                  </li>
-                ))}
-              </ul>
-            </details>
-          </div>
+          <AssumptionsAccordion assumptions={result.assumptions} />
         </div>
       )}
     </div>

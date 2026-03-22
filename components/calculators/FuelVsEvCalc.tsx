@@ -11,7 +11,8 @@ interface CompareRow {
   label: string;
   monthlyMin: number;
   monthlyMax: number;
-  color: string;
+  barColor: string;
+  textColor: string;
 }
 
 export function FuelVsEvCalc() {
@@ -38,9 +39,9 @@ export function FuelVsEvCalc() {
     const evMax = Math.round(kwh * (homeRatio * f.ev_home_slow + publicRatio * f.ev_public_fast_50kw));
 
     setResult([
-      { label: "가솔린", monthlyMin: gasMin, monthlyMax: gasMax, color: "text-orange-400" },
-      { label: "하이브리드", monthlyMin: hybMin, monthlyMax: hybMax, color: "text-yellow-400" },
-      { label: "전기차(EV)", monthlyMin: evMin, monthlyMax: evMax, color: "text-blue-400" },
+      { label: "가솔린", monthlyMin: gasMin, monthlyMax: gasMax, barColor: "bg-orange-500/70", textColor: "text-orange-400" },
+      { label: "하이브리드", monthlyMin: hybMin, monthlyMax: hybMax, barColor: "bg-yellow-500/70", textColor: "text-yellow-400" },
+      { label: "전기차(EV)", monthlyMin: evMin, monthlyMax: evMax, barColor: "bg-blue-500/70", textColor: "text-blue-400" },
     ]);
   }
 
@@ -58,8 +59,11 @@ export function FuelVsEvCalc() {
             type="range" min={300} max={5000} step={100}
             value={monthlyMileage}
             onChange={(e) => setMonthlyMileage(Number(e.target.value))}
-            className="w-full accent-blue-500"
+            className="w-full"
           />
+          <div className="flex justify-between text-xs text-slate-600">
+            <span>300km</span><span>5,000km</span>
+          </div>
         </div>
 
         {/* EV 집충전 비율 */}
@@ -72,11 +76,11 @@ export function FuelVsEvCalc() {
             type="range" min={0} max={100} step={10}
             value={homeChargeRatio}
             onChange={(e) => setHomeChargeRatio(Number(e.target.value))}
-            className="w-full accent-blue-500"
+            className="w-full"
           />
-          <p className="text-xs text-slate-500">
-            아파트·단독주택 완속충전 가능 시 높게, 외부 충전 위주면 낮게 설정
-          </p>
+          <div className="flex justify-between text-xs text-slate-600">
+            <span>외부 충전 위주</span><span>완전 집충전</span>
+          </div>
         </div>
 
         <button
@@ -92,22 +96,21 @@ export function FuelVsEvCalc() {
         <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 space-y-4">
           <h3 className="text-base font-semibold text-slate-200">월 연료·충전비 비교</h3>
 
-          {/* 바 차트 느낌의 비교 */}
           {result.map((row) => {
             const maxVal = Math.max(...result.map((r) => r.monthlyMax));
             const barWidth = Math.round((row.monthlyMax / maxVal) * 100);
             return (
               <div key={row.label} className="space-y-1.5">
                 <div className="flex justify-between items-baseline">
-                  <span className={`text-sm font-semibold ${row.color}`}>{row.label}</span>
+                  <span className={`text-sm font-semibold ${row.textColor}`}>{row.label}</span>
                   <span className="text-sm text-slate-300 tabular-nums">
                     {fmt(row.monthlyMin)} ~ {fmt(row.monthlyMax)}원
                   </span>
                 </div>
-                <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                <div className="h-3 bg-slate-700 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-current opacity-40 rounded-full transition-all"
-                    style={{ width: `${barWidth}%`, color: "inherit" }}
+                    className={`h-full rounded-full transition-all ${row.barColor}`}
+                    style={{ width: `${barWidth}%` }}
                   />
                 </div>
               </div>
