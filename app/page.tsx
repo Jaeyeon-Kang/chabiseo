@@ -11,15 +11,15 @@ const CALCULATORS = [
     icon: "🚗",
     iconBg: "bg-blue-100",
     title: "첫차 총예산 계산기",
-    desc: "차값만 보면 안 됩니다. 취등록세·보험·연료비·소모품까지 첫해 실제 총비용을 한 번에 확인하세요.",
-    badge: "첫차 구매층 필수",
+    desc: "취등록세, 보험, 연료비, 소모품까지 — 첫해에 실제로 얼마나 드는지 항목별로 확인해보세요.",
+    badge: "첫차 구매 전 필수",
   },
   {
     href: "/calculator/fuel-vs-ev",
     icon: "⚡",
     iconBg: "bg-teal-100",
     title: "연료비 비교 계산기",
-    desc: "가솔린·하이브리드·EV 3가지 연료 타입의 월 비용을 나란히 비교해 드립니다.",
+    desc: "내 주행거리 기준으로 가솔린·하이브리드·전기차 중 어느 쪽이 실제로 저렴한지 비교해보세요.",
     badge: null,
   },
   {
@@ -27,7 +27,7 @@ const CALCULATORS = [
     icon: "🔄",
     iconBg: "bg-violet-100",
     title: "신차 vs 중고차 총소유비",
-    desc: "5년 기준 총소유비(감가상각 포함)로 신차와 중고차 중 어느 쪽이 유리한지 판단해 드립니다.",
+    desc: "가격 차이만 보면 판단이 틀릴 수 있습니다. 감가상각·보험·정비비까지 더한 5년 총소유비로 비교해보세요.",
     badge: null,
   },
 ] as const;
@@ -52,7 +52,7 @@ const CATEGORIES = [
   {
     href: "/category/maintaining",
     icon: "🔧",
-    label: "탈 때·정비",
+    label: "유지·정비",
     bg: "bg-emerald-50 hover:bg-emerald-100",
     border: "border-emerald-200 hover:border-emerald-300",
     label_color: "text-emerald-700",
@@ -82,12 +82,12 @@ export default function HomePage() {
       {/* Hero */}
       <section className="space-y-4">
         <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
-          차 살 때·탈 때·정비할 때<br />
-          <span className="text-blue-600">돈 판단</span>을 도와드립니다
+          차 살 때, 탈 때, 고칠 때<br />
+          <span className="text-blue-600">비용 먼저</span> 확인하세요
         </h1>
         <p className="text-[15px] text-slate-500 max-w-xl leading-relaxed">
-          정확한 실시간 견적이 아니라, 신뢰할 수 있는 범위와 판단 기준을 드립니다.
-          숫자를 먼저 보고, 그 다음 왜 그런지 이해하세요.
+          실시간 견적이 아니라 믿을 수 있는 범위와 기준입니다.
+          어느 정도 드는지 미리 알면, 정비소에서도 딜러 앞에서도 덜 흔들립니다.
         </p>
         <div className="flex items-center gap-2 flex-wrap">
           {["가이드 12개", "계산기 3종", "매월 업데이트"].map((s) => (
@@ -101,7 +101,7 @@ export default function HomePage() {
       {/* 계산기 */}
       <section className="space-y-3">
         <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-widest">
-          계산기 — 숫자부터 바로
+          바로 계산해보기
         </h2>
         <div className="grid gap-3">
           {CALCULATORS.map((c) => (
@@ -135,7 +135,7 @@ export default function HomePage() {
       {/* 카테고리 */}
       <section className="space-y-3">
         <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-widest">
-          카테고리별 보기
+          주제별로 찾기
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {CATEGORIES.map((c) => (
@@ -154,7 +154,7 @@ export default function HomePage() {
       {/* 인기 가이드 */}
       <section className="space-y-3">
         <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-widest">
-          많이 찾는 가이드
+          많이 읽은 가이드
         </h2>
         <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm divide-y divide-slate-100">
           {POPULAR_GUIDES.map((g) => (
@@ -173,11 +173,12 @@ export default function HomePage() {
       {/* 사이트 소개 */}
       <section className="text-sm text-slate-400 leading-relaxed border-t border-slate-200 pt-8 space-y-3">
         <p>
-          차비서는 "정확한 실시간 견적"을 주는 사이트가 아닙니다.
-          차종·지역·운행 조건에 따라 실제 비용은 달라지기 때문에, 단일 숫자보다 신뢰할 수 있는 범위와 판단 기준을 드립니다.
+          차비서의 수치는 실시간 견적이 아닙니다.
+          제조사 매뉴얼, 국토교통부·한국전력 공공 통계, 서비스센터 공시가를 기반으로 한 범위값이며,
+          실제 비용은 차종·지역·운행 조건에 따라 다릅니다.
         </p>
         <p>
-          모든 수치는 제조사 매뉴얼, 국토교통부·한국전력 공공 통계, 서비스센터 공시가를 바탕으로 합니다.
+          중요한 정비 결정은 반드시 전문 정비사에게 직접 확인하세요.
         </p>
       </section>
 

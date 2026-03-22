@@ -42,8 +42,8 @@ export default function FuelVsEvPage() {
           <p className="text-sm text-blue-600 font-medium">계산기</p>
           <h1 className="text-2xl font-bold text-slate-900">연료비 비교 계산기</h1>
           <p className="text-[15px] text-slate-600 leading-relaxed">
-            같은 거리를 달렸을 때 가솔린·하이브리드·EV의 월 연료·충전비를 나란히 비교합니다.
-            차 교체를 고려 중이라면 먼저 이 숫자를 확인하세요.
+            내 주행거리와 충전 환경을 넣으면 가솔린·하이브리드·전기차 중 어느 쪽이 실제로 저렴한지
+            월 단위로 비교해볼 수 있습니다.
           </p>
         </header>
 
