@@ -96,8 +96,9 @@ export function FuelVsEvCalc() {
           <h3 className="text-base font-semibold text-slate-800">월 연료·충전비 비교</h3>
 
           {result.map((row, i) => {
-            const maxVal = Math.max(...result.map((r) => r.monthlyMax));
-            const barWidth = Math.round((row.monthlyMax / maxVal) * 100);
+            const avgOf = (r: typeof row) => (r.monthlyMin + r.monthlyMax) / 2;
+            const maxAvg = Math.max(...result.map(avgOf));
+            const barWidth = Math.round((avgOf(row) / maxAvg) * 100);
             return (
               <div key={row.label} className="space-y-2">
                 <div className="flex justify-between items-baseline">

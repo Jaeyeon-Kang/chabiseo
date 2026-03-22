@@ -8,7 +8,7 @@
     "ev_reduction": 0.0,
     "_note": "EV는 취득세 한시 면제(정책 변경 확인 필요). 비영업용 기준 7%."
   },
-  "registration_fee_rate": 0.02,
+  "registration_fee_rate": 0.008,
   "annual_tax_per_cc": {
     "_comment": "cc당 연간 자동차세 세율 (원)",
     "up_to_1000": 80,

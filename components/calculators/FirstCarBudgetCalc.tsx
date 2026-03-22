@@ -127,7 +127,7 @@ export function FirstCarBudgetCalc() {
               <span className="text-base font-normal text-slate-500 ml-1">원</span>
             </p>
             <p className="text-sm text-slate-500">
-              월 환산:{" "}
+              월 실 운행비 (취득세 제외):{" "}
               <span className="text-slate-800 font-semibold">
                 {fmt(monthMin)} ~ {fmt(monthMax)}원/월
               </span>
@@ -139,7 +139,7 @@ export function FirstCarBudgetCalc() {
             updatedAt={result.updatedAt}
             items={[
               { label: "취득세", cost: { min: result.acquisitionTax, max: result.acquisitionTax, unit: "원" } },
-              { label: "등록비", cost: { min: result.registrationFee, max: result.registrationFee, unit: "원" } },
+              { label: "공채 실질비용", cost: { min: result.registrationFee, max: result.registrationFee, unit: "원" } },
               { label: "첫해 보험료", cost: result.firstYearInsurance },
               { label: "연간 연료비", cost: result.annualFuel },
               { label: "연간 소모품", cost: result.annualConsumables },
