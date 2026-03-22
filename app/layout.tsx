@@ -32,7 +32,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko" className="h-full">
-      <body className="min-h-full flex flex-col bg-slate-900 text-slate-200">
+      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

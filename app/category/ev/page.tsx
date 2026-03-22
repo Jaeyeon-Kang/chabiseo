@@ -14,8 +14,8 @@ export default function EvCategoryPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
       <header className="space-y-2">
-        <p className="text-sm text-blue-400 font-medium">카테고리</p>
-        <h1 className="text-2xl font-bold text-slate-100">⚡ EV·친환경</h1>
+        <p className="text-sm text-blue-600 font-medium">카테고리</p>
+        <h1 className="text-2xl font-bold text-slate-900">⚡ EV·친환경</h1>
         <p className="text-[15px] text-slate-400 leading-relaxed">
           전기차와 하이브리드의 실제 비용을 확인하세요.
         </p>

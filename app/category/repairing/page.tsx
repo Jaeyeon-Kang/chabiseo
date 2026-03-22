@@ -14,8 +14,8 @@ export default function RepairingCategoryPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
       <header className="space-y-2">
-        <p className="text-sm text-blue-400 font-medium">카테고리</p>
-        <h1 className="text-2xl font-bold text-slate-100">🛠️ 고장·수리</h1>
+        <p className="text-sm text-blue-600 font-medium">카테고리</p>
+        <h1 className="text-2xl font-bold text-slate-900">🛠️ 고장·수리</h1>
         <p className="text-[15px] text-slate-400 leading-relaxed">
           수리 견적이 적정한지, 수리와 교체 중 어느 쪽이 유리한지 판단하는 데 필요한 정보입니다.
         </p>

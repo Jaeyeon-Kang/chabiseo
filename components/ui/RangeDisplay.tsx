@@ -17,14 +17,14 @@ export function RangeDisplay({
 
   return (
     <div
-      className={`flex flex-col gap-0.5 py-3 border-b border-slate-700 last:border-0 ${
-        highlight ? "bg-blue-950/30 -mx-4 px-4 rounded-lg" : ""
+      className={`flex flex-col gap-0.5 py-3 border-b border-slate-100 last:border-0 ${
+        highlight ? "bg-blue-50 -mx-4 px-4 rounded-lg" : ""
       }`}
     >
-      <span className="text-sm text-slate-400">{label}</span>
+      <span className="text-sm text-slate-500">{label}</span>
       <span
         className={`font-semibold tabular-nums ${
-          highlight ? "text-xl text-blue-300" : "text-base text-slate-100"
+          highlight ? "text-xl text-blue-600" : "text-base text-slate-800"
         }`}
       >
         {fmt(min)} ~ {fmt(max)}

@@ -14,8 +14,8 @@ export default function BuyingCategoryPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
       <header className="space-y-2">
-        <p className="text-sm text-blue-400 font-medium">카테고리</p>
-        <h1 className="text-2xl font-bold text-slate-100">🏷️ 살 때</h1>
+        <p className="text-sm text-blue-600 font-medium">카테고리</p>
+        <h1 className="text-2xl font-bold text-slate-900">🏷️ 살 때</h1>
         <p className="text-[15px] text-slate-400 leading-relaxed">
           차를 구매하기 전에 꼭 알아야 할 비용 정보입니다.
         </p>

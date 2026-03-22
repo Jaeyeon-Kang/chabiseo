@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f172a;  /* slate-900 */
-  --foreground: #e2e8f0;  /* slate-200 */
-  --brand: #3b82f6;       /* blue-500 */
+  --background: #F8FAFC;  /* slate-50 */
+  --foreground: #0F172A;  /* slate-900 */
+  --brand: #2563EB;       /* blue-600 */
 }
 
 @theme inline {
@@ -20,11 +20,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* 슬라이더 스타일 통일 */
+/* 슬라이더 */
 input[type="range"] {
   height: 4px;
   border-radius: 999px;
-  background: #334155; /* slate-700 */
+  background: #E2E8F0; /* slate-200 */
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
@@ -35,8 +35,8 @@ input[type="range"]::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--thumb-color, #3b82f6);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--thumb-color, #3b82f6) 25%, transparent);
+  background: var(--thumb-color, #2563EB);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--thumb-color, #2563EB) 20%, transparent);
   transition: transform 0.15s ease;
 }
 

@@ -13,13 +13,13 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-700/60 bg-slate-900/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
       <div className="mx-auto max-w-3xl px-4 h-14 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-blue-400 font-bold text-lg tracking-tight group-hover:text-blue-300 transition-colors">
+          <span className="text-blue-600 font-bold text-lg tracking-tight group-hover:text-blue-700 transition-colors">
             차비서
           </span>
-          <span className="hidden sm:block text-xs text-slate-600">
+          <span className="hidden sm:block text-xs text-slate-400">
             자동차 비용 판단 가이드
           </span>
         </Link>
@@ -33,8 +33,8 @@ export function Header() {
                 href={n.href}
                 className={`text-xs px-3 py-1.5 rounded-lg transition-colors ${
                   isActive
-                    ? "text-blue-400 bg-blue-950/50 font-medium"
-                    : "text-slate-400 hover:text-slate-200 hover:bg-slate-800"
+                    ? "text-blue-600 bg-blue-50 font-medium"
+                    : "text-slate-500 hover:text-slate-800 hover:bg-slate-100"
                 }`}
               >
                 {n.label}
