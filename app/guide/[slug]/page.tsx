@@ -24,6 +24,7 @@ export async function generateMetadata({
       title: guide.title,
       description: guide.description,
       type: "article",
+      publishedTime: guide.publishedAt ?? guide.updatedAt,
       modifiedTime: guide.updatedAt,
     },
   };
@@ -69,11 +70,19 @@ export default async function GuidePage({
     .map((s) => getGuideBySlug(s))
     .filter(Boolean) as NonNullable<ReturnType<typeof getGuideBySlug>>[];
 
+  const categoryLabel: Record<string, string> = {
+    maintaining: "소모품·정비",
+    repairing: "수리비 단가표",
+    buying: "구매 비용 검증",
+    ev: "EV 충전·유지비",
+  };
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: guide.title,
     description: guide.description,
+    datePublished: guide.publishedAt ?? guide.updatedAt,
     dateModified: guide.updatedAt,
     author: { "@type": "Organization", name: "차비서", url: BASE_URL },
     publisher: { "@type": "Organization", name: "차비서", url: BASE_URL },
@@ -97,7 +106,7 @@ export default async function GuidePage({
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "홈", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "가이드", item: `${BASE_URL}/category/maintaining` },
+      { "@type": "ListItem", position: 2, name: categoryLabel[guide.category] ?? "가이드", item: `${BASE_URL}/category/${guide.category}` },
       { "@type": "ListItem", position: 3, name: guide.title, item: `${BASE_URL}/guide/${slug}` },
     ],
   };

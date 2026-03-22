@@ -5,6 +5,7 @@ export interface Guide {
   category: "buying" | "maintaining" | "repairing" | "ev";
   relatedCalculator?: { label: string; href: string };
   relatedGuides: string[];
+  publishedAt?: string;
   updatedAt: string;
   sections: { heading?: string; body: string }[];
   faq?: { q: string; a: string }[];

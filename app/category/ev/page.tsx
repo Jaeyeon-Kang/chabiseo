@@ -6,6 +6,11 @@ import { GuideCard } from "@/components/ui/GuideCard";
 export const metadata: Metadata = {
   title: "EV·친환경 가이드 — 전기차 비용 허브",
   description: "전기차 충전비, EV가 맞는 경우·안 맞는 경우, 하이브리드 vs EV 비교 등 전기차 비용 정보를 모았습니다.",
+  openGraph: {
+    title: "EV·친환경 가이드 — 전기차 비용 허브",
+    description: "전기차 충전비, EV가 맞는 경우·안 맞는 경우, 하이브리드 vs EV 비교 등 전기차 비용 정보를 모았습니다.",
+    type: "website",
+  },
 };
 
 export default function EvCategoryPage() {

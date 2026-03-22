@@ -6,6 +6,11 @@ import { GuideCard } from "@/components/ui/GuideCard";
 export const metadata: Metadata = {
   title: "수리비 단가표 — 과다 청구 및 견적 검증",
   description: "정비소 견적의 적정성을 검증하고, 부품비와 공임 표준 단가를 기반으로 과잉 정비 및 과다 청구를 예방합니다.",
+  openGraph: {
+    title: "수리비 단가표 — 과다 청구 및 견적 검증",
+    description: "정비소 견적의 적정성을 검증하고, 부품비와 공임 표준 단가를 기반으로 과잉 정비 및 과다 청구를 예방합니다.",
+    type: "website",
+  },
 };
 
 export default function RepairingCategoryPage() {

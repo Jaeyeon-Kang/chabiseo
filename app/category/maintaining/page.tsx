@@ -6,6 +6,11 @@ import { GuideCard } from "@/components/ui/GuideCard";
 export const metadata: Metadata = {
   title: "탈 때·정비 가이드 — 교체주기·정비비 허브",
   description: "엔진오일, 브레이크패드, 타이어, 배터리 등 차를 타는 동안 필요한 모든 정비 가이드를 모았습니다.",
+  openGraph: {
+    title: "탈 때·정비 가이드 — 교체주기·정비비 허브",
+    description: "엔진오일, 브레이크패드, 타이어, 배터리 등 차를 타는 동안 필요한 모든 정비 가이드를 모았습니다.",
+    type: "website",
+  },
 };
 
 export default function MaintainingCategoryPage() {

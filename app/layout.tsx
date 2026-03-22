@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { BASE_URL } from "@/lib/site-url";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "차비서 — 자동차 비용 판단 가이드",
     template: "%s | 차비서",
@@ -25,6 +27,11 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     type: "website",
     siteName: "차비서",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "차비서 — 자동차 비용 판단 가이드",
+    description: "차 살 때·탈 때·정비할 때, 돈 문제를 숫자로 바로 이해하세요.",
   },
 };
 
