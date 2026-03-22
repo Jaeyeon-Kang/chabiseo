@@ -4,8 +4,8 @@ import { GUIDES } from "@/data/guides";
 import { GuideCard } from "@/components/ui/GuideCard";
 
 export const metadata: Metadata = {
-  title: "고장·수리 가이드 — 정비비 범위 허브",
-  description: "수리비가 적정한지, 수리해야 할지 교체해야 할지 판단할 때 필요한 비용 정보를 모았습니다.",
+  title: "수리비 단가표 — 과다 청구 및 견적 검증",
+  description: "정비소 견적의 적정성을 검증하고, 부품비와 공임 표준 단가를 기반으로 과잉 정비 및 과다 청구를 예방합니다.",
 };
 
 export default function RepairingCategoryPage() {
@@ -17,7 +17,8 @@ export default function RepairingCategoryPage() {
         <p className="text-sm text-blue-600 font-medium">카테고리</p>
         <h1 className="text-2xl font-bold text-slate-900">🛠️ 고장·수리</h1>
         <p className="text-[15px] text-slate-600 leading-relaxed">
-          수리 견적이 적정한지, 수리와 교체 중 어느 쪽이 유리한지 판단하는 데 필요한 정보입니다.
+          정비소 견적의 적정성을 검증하고, 부품비와 공임 표준 단가를 기반으로
+          과잉 정비 및 과다 청구를 예방합니다.
         </p>
       </header>
 

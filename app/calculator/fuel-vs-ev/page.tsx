@@ -52,8 +52,8 @@ export default function FuelVsEvPage() {
           questions={[
             { text: "첫차 총예산 (취등록세·보험 포함) 계산하기", href: "/calculator/first-car-budget", type: "calculator" },
             { text: "신차 vs 중고차 5년 총소유비 비교", href: "/calculator/new-vs-used", type: "calculator" },
-            { text: "하이브리드가 생각보다 유리한 경우", href: "/guide/hybrid-advantage", type: "guide" },
-            { text: "전기차가 안 맞는 사람 유형", href: "/guide/ev-not-for-everyone", type: "guide" },
+            { text: "하이브리드가 오히려 손해인 주행 패턴", href: "/guide/hybrid-advantage", type: "guide" },
+            { text: "EV 구매 전: 충전 인프라 손익분기점 확인", href: "/guide/ev-not-for-everyone", type: "guide" },
           ]}
         />
       </div>

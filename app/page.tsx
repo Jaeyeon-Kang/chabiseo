@@ -10,41 +10,41 @@ const CALCULATORS = [
     href: "/calculator/first-car-budget",
     icon: "🚗",
     iconBg: "bg-blue-100",
-    title: "첫차 총예산 계산기",
-    desc: "취등록세, 보험, 연료비, 소모품까지 — 첫해에 실제로 얼마나 드는지 항목별로 확인해보세요.",
+    title: "첫차 실지출액 계산기",
+    desc: "차량 가액만 보면 안 됩니다. 취등록세, 보험, 연료비, 소모품까지 — 숨만 쉬어도 나가는 첫해 실지출액을 항목별로 산출합니다.",
     badge: "첫차 구매 전 필수",
   },
   {
     href: "/calculator/fuel-vs-ev",
     icon: "⚡",
     iconBg: "bg-teal-100",
-    title: "연료비 비교 계산기",
-    desc: "내 주행거리 기준으로 가솔린·하이브리드·전기차 중 어느 쪽이 실제로 저렴한지 비교해보세요.",
+    title: "내연기관 vs 전기차 유지비",
+    desc: "카탈로그 연비에 속지 마세요. 내 주행거리와 충전 환경 기준으로 가솔린·하이브리드·전기차 월 비용을 직접 비교합니다.",
     badge: null,
   },
   {
     href: "/calculator/new-vs-used",
     icon: "🔄",
     iconBg: "bg-violet-100",
-    title: "신차 vs 중고차 총소유비",
-    desc: "가격 차이만 보면 판단이 틀릴 수 있습니다. 감가상각·보험·정비비까지 더한 5년 총소유비로 비교해보세요.",
+    title: "신차 vs 중고차 5년 총비용",
+    desc: "중고차가 무조건 저렴한 건 아닙니다. 수리비·감가상각까지 더한 5년 총소유비로 실제 손익을 낱낱이 분해합니다.",
     badge: null,
   },
 ] as const;
 
 const POPULAR_GUIDES = [
-  { href: "/guide/engine-oil-interval", label: "엔진오일 교체주기" },
-  { href: "/guide/brake-pad-signal", label: "브레이크패드 교체 신호" },
+  { href: "/guide/engine-oil-interval", label: "호갱 방지: 엔진오일 적정 교체 주기" },
+  { href: "/guide/brake-pad-signal", label: "브레이크패드 과잉 교체 당하지 않는 법" },
   { href: "/guide/tire-timing", label: "타이어 교체시기" },
   { href: "/guide/battery-timing", label: "배터리 교체시기" },
-  { href: "/guide/first-car-hidden-costs", label: "첫차 살 때 빠지는 비용 7가지" },
+  { href: "/guide/first-car-hidden-costs", label: "딜러가 말 안 해주는 첫차 부대비용 7가지" },
 ];
 
 const CATEGORIES = [
   {
     href: "/category/buying",
     icon: "🏷️",
-    label: "살 때",
+    label: "구매 비용 검증",
     bg: "bg-blue-50 hover:bg-blue-100",
     border: "border-blue-200 hover:border-blue-300",
     label_color: "text-blue-700",
@@ -52,7 +52,7 @@ const CATEGORIES = [
   {
     href: "/category/maintaining",
     icon: "🔧",
-    label: "유지·정비",
+    label: "소모품·정비",
     bg: "bg-emerald-50 hover:bg-emerald-100",
     border: "border-emerald-200 hover:border-emerald-300",
     label_color: "text-emerald-700",
@@ -60,7 +60,7 @@ const CATEGORIES = [
   {
     href: "/category/repairing",
     icon: "🛠️",
-    label: "고장·수리",
+    label: "수리비 단가표",
     bg: "bg-amber-50 hover:bg-amber-100",
     border: "border-amber-200 hover:border-amber-300",
     label_color: "text-amber-700",
@@ -68,7 +68,7 @@ const CATEGORIES = [
   {
     href: "/category/ev",
     icon: "⚡",
-    label: "EV·친환경",
+    label: "EV 충전·유지비",
     bg: "bg-teal-50 hover:bg-teal-100",
     border: "border-teal-200 hover:border-teal-300",
     label_color: "text-teal-700",
@@ -83,11 +83,11 @@ export default function HomePage() {
       <section className="space-y-4">
         <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
           차 살 때, 탈 때, 고칠 때<br />
-          <span className="text-blue-600">비용 먼저</span> 확인하세요
+          <span className="text-blue-600">견적 전에</span> 먼저 확인하세요
         </h1>
         <p className="text-[15px] text-slate-500 max-w-xl leading-relaxed">
-          실시간 견적이 아니라 믿을 수 있는 범위와 기준입니다.
-          어느 정도 드는지 미리 알면, 정비소에서도 딜러 앞에서도 덜 흔들립니다.
+          딜러와 정비소 견적을 받기 전에 먼저 확인하세요.
+          표준 비용 범위를 알면 과다 청구를 그냥 넘기지 않게 됩니다.
         </p>
         <div className="flex items-center gap-2 flex-wrap">
           {["가이드 12개", "계산기 3종", "매월 업데이트"].map((s) => (
@@ -145,7 +145,7 @@ export default function HomePage() {
               className={`group flex flex-col items-center gap-3 py-6 ${c.bg} border ${c.border} rounded-2xl transition-all shadow-sm hover:shadow-md`}
             >
               <span className="text-3xl">{c.icon}</span>
-              <span className={`text-sm font-semibold ${c.label_color}`}>{c.label}</span>
+              <span className={`text-sm font-semibold text-center px-2 ${c.label_color}`}>{c.label}</span>
             </Link>
           ))}
         </div>
@@ -170,15 +170,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 사이트 소개 */}
-      <section className="text-sm text-slate-400 leading-relaxed border-t border-slate-200 pt-8 space-y-3">
+      {/* 면책 조항 */}
+      <section className="text-xs text-slate-400 leading-relaxed border-t border-slate-200 pt-8 space-y-2">
+        <p className="font-semibold text-slate-500">[면책 조항]</p>
         <p>
-          차비서의 수치는 실시간 견적이 아닙니다.
-          제조사 매뉴얼, 국토교통부·한국전력 공공 통계, 서비스센터 공시가를 기반으로 한 범위값이며,
-          실제 비용은 차종·지역·운행 조건에 따라 다릅니다.
-        </p>
-        <p>
-          중요한 정비 결정은 반드시 전문 정비사에게 직접 확인하세요.
+          본 사이트의 모든 산출 결과는 공공 통계(국토교통부·한국전력 등), 제조사 공시가 및 표준 공임표를
+          바탕으로 한 추정치입니다. 개별 차량 상태·지역·정비소에 따라 실제 청구 금액과 차이가 발생할 수 있으며,
+          본 사이트는 해당 결과에 대한 법적 책임을 지지 않습니다.
         </p>
       </section>
 

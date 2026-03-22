@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV = [
-  { href: "/calculator/first-car-budget", label: "첫차예산" },
-  { href: "/calculator/fuel-vs-ev", label: "연료비비교" },
-  { href: "/category/maintaining", label: "정비가이드" },
+  { href: "/calculator/first-car-budget", label: "첫차 실지출" },
+  { href: "/calculator/fuel-vs-ev", label: "내연기관 vs EV" },
+  { href: "/category/maintaining", label: "정비비 단가표" },
 ];
 
 export function Header() {
@@ -20,7 +20,7 @@ export function Header() {
             차비서
           </span>
           <span className="hidden sm:block text-xs text-slate-400">
-            자동차 비용 판단 가이드
+            자동차 비용 계산기 & 정비비 단가표
           </span>
         </Link>
 

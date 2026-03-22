@@ -95,11 +95,11 @@ export function FirstCarBudgetCalc() {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm text-slate-600">주차 환경</label>
+          <label className="text-sm text-slate-600">월정기 주차 비용</label>
           <div className="flex gap-2">
             {[
-              { val: true, label: "자가 주차 (무료)" },
-              { val: false, label: "유료 주차 필요" },
+              { val: true, label: "무료 (자가·아파트)" },
+              { val: false, label: "유료 (월정기권)" },
             ].map((o) => (
               <button
                 key={String(o.val)}
@@ -120,7 +120,7 @@ export function FirstCarBudgetCalc() {
       {result && (
         <div className="space-y-4">
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5 space-y-3">
-            <p className="text-xs text-slate-500">첫해 예상 총비용</p>
+            <p className="text-xs text-slate-500">취득 포함 1년차 총비용</p>
             <p className="text-3xl font-bold text-slate-900 tabular-nums leading-tight">
               {fmt(yearMin)} ~<br />
               {fmt(yearMax)}
@@ -150,6 +150,10 @@ export function FirstCarBudgetCalc() {
           />
 
           <AssumptionsAccordion assumptions={result.assumptions} />
+          <p className="text-xs text-slate-400 leading-relaxed">
+            본 산출 결과는 공공 통계 및 표준 공임표 기반 추정치이며, 실제 청구 금액과 차이가 발생할 수 있습니다.
+            본 사이트는 해당 결과에 대한 법적 책임을 지지 않습니다.
+          </p>
         </div>
       )}
     </div>
