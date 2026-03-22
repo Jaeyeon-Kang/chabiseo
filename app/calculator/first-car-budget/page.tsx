@@ -14,7 +14,7 @@ export default function FirstCarBudgetPage() {
       <header className="space-y-2">
         <p className="text-sm text-blue-400 font-medium">계산기</p>
         <h1 className="text-2xl font-bold text-slate-100">첫차 총예산 계산기</h1>
-        <p className="text-sm text-slate-400 leading-relaxed">
+        <p className="text-[15px] text-slate-400 leading-relaxed">
           차값만 보면 안 됩니다. 취등록세·보험·연료비·소모품까지 합산한 첫해 총비용과 월 유지비를 먼저 확인하세요.
         </p>
       </header>

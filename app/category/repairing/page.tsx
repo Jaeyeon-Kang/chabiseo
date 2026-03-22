@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GUIDES } from "@/data/guides";
+import { GuideCard } from "@/components/ui/GuideCard";
 
 export const metadata: Metadata = {
   title: "고장·수리 가이드 — 정비비 범위 허브",
@@ -7,22 +9,35 @@ export const metadata: Metadata = {
 };
 
 export default function RepairingCategoryPage() {
+  const guides = GUIDES.filter((g) => g.category === "repairing");
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
       <header className="space-y-2">
         <p className="text-sm text-blue-400 font-medium">카테고리</p>
         <h1 className="text-2xl font-bold text-slate-100">🛠️ 고장·수리</h1>
-        <p className="text-sm text-slate-400">수리 견적이 적정한지, 수리와 교체 중 어느 쪽이 유리한지 판단하는 데 필요한 정보입니다.</p>
+        <p className="text-[15px] text-slate-400 leading-relaxed">
+          수리 견적이 적정한지, 수리와 교체 중 어느 쪽이 유리한지 판단하는 데 필요한 정보입니다.
+        </p>
       </header>
 
-      <div className="grid gap-2">
-        <Link href="/calculator/new-vs-used" className="group flex flex-col gap-1 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-blue-600/50 rounded-xl p-4 transition-all">
-          <h2 className="text-base font-semibold text-slate-100 group-hover:text-blue-300 transition-colors">수리 vs 교체 판단 계산기</h2>
-          <p className="text-sm text-slate-400">수리비·차량가치·향후 예상 비용으로 경제성 판단</p>
-        </Link>
+      <div className="grid gap-3">
+        {guides.map((g) => (
+          <GuideCard key={g.slug} slug={g.slug} title={g.title} description={g.description} />
+        ))}
+        {guides.length === 0 && (
+          <p className="text-slate-500 text-sm py-8 text-center">가이드를 준비 중입니다.</p>
+        )}
       </div>
 
-      <p className="text-sm text-slate-500 text-center py-4">추가 가이드를 준비 중입니다.</p>
+      <div className="border-t border-slate-800 pt-6 space-y-2">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">관련 계산기</p>
+        <Link href="/calculator/new-vs-used" className="flex items-center gap-3 p-4 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 rounded-2xl text-[15px] text-slate-300 hover:text-slate-100 transition-colors group">
+          <span>🔄</span>
+          <span className="flex-1">신차 vs 중고차 총소유비 비교</span>
+          <span className="text-slate-600 group-hover:text-blue-400 transition-colors">→</span>
+        </Link>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GUIDES } from "@/data/guides";
+import { GuideCard } from "@/components/ui/GuideCard";
 
 export const metadata: Metadata = {
   title: "탈 때·정비 가이드 — 교체주기·정비비 허브",
@@ -15,35 +16,29 @@ export default function MaintainingCategoryPage() {
       <header className="space-y-2">
         <p className="text-sm text-blue-400 font-medium">카테고리</p>
         <h1 className="text-2xl font-bold text-slate-100">🔧 탈 때·정비</h1>
-        <p className="text-sm text-slate-400">차를 타는 동안 발생하는 정비비와 교체주기 정보를 모았습니다.</p>
+        <p className="text-[15px] text-slate-400 leading-relaxed">
+          차를 타는 동안 발생하는 정비비와 교체주기 정보를 모았습니다.
+        </p>
       </header>
 
       <div className="grid gap-3">
         {guides.map((g) => (
-          <Link
-            key={g.slug}
-            href={`/guide/${g.slug}`}
-            className="group flex flex-col gap-1 bg-slate-800 hover:bg-slate-750 border border-slate-700 hover:border-blue-600/50 rounded-xl p-4 transition-all"
-          >
-            <h2 className="text-base font-semibold text-slate-100 group-hover:text-blue-300 transition-colors">
-              {g.title}
-            </h2>
-            <p className="text-sm text-slate-400 line-clamp-2">{g.description}</p>
-            <p className="text-xs text-slate-600 mt-1">업데이트: {g.updatedAt}</p>
-          </Link>
+          <GuideCard key={g.slug} slug={g.slug} title={g.title} description={g.description} />
         ))}
       </div>
 
-      <div className="border-t border-slate-800 pt-6">
-        <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">관련 계산기</h3>
-        <div className="grid gap-2">
-          <Link href="/calculator/first-car-budget" className="flex items-center gap-3 p-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl text-sm text-slate-300 transition-colors">
-            🚗 첫차 총예산 계산기 →
-          </Link>
-          <Link href="/calculator/fuel-vs-ev" className="flex items-center gap-3 p-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl text-sm text-slate-300 transition-colors">
-            ⚡ 연료비 비교 계산기 →
-          </Link>
-        </div>
+      <div className="border-t border-slate-800 pt-6 space-y-2">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">관련 계산기</p>
+        <Link href="/calculator/first-car-budget" className="flex items-center gap-3 p-4 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 rounded-2xl text-[15px] text-slate-300 hover:text-slate-100 transition-colors group">
+          <span>🚗</span>
+          <span className="flex-1">첫차 총예산 계산기</span>
+          <span className="text-slate-600 group-hover:text-blue-400 transition-colors">→</span>
+        </Link>
+        <Link href="/calculator/fuel-vs-ev" className="flex items-center gap-3 p-4 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 rounded-2xl text-[15px] text-slate-300 hover:text-slate-100 transition-colors group">
+          <span>⚡</span>
+          <span className="flex-1">연료비 비교 계산기</span>
+          <span className="text-slate-600 group-hover:text-blue-400 transition-colors">→</span>
+        </Link>
       </div>
     </div>
   );
