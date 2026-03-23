@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     "엔진오일 교체주기",
     "자동차 비용 계산기",
   ],
+  verification: {
+    google: "google68c300082e77cfeb",
+    other: { "naver-site-verification": ["6d81c15f2b2554cc8f474fa457dffb8f9957b8af"] },
+  },
   openGraph: {
     title: "차비서 — 자동차 비용 판단 가이드",
     description: "차 살 때·탈 때·정비할 때, 돈 문제를 숫자로 바로 이해하세요.",
