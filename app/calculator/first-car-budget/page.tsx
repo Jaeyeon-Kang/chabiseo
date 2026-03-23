@@ -68,7 +68,10 @@ export default function FirstCarBudgetPage() {
 
       <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
         <header className="space-y-2">
-          <p className="text-sm text-blue-600 font-medium">계산기</p>
+          <div className="flex items-center gap-2 flex-wrap">
+            <p className="text-sm text-blue-600 font-medium">계산기</p>
+            <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">2026-03 데이터 반영</span>
+          </div>
           <h1 className="text-2xl font-bold text-slate-900">첫차 총예산 계산기</h1>
           <p className="text-[15px] text-slate-600 leading-relaxed">
             차값만 보고 예산을 잡으면 나중에 당황합니다. 취등록세, 보험, 연료비, 소모품 교체까지

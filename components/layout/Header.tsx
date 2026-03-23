@@ -16,6 +16,12 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
       <div className="mx-auto max-w-3xl px-4 h-14 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="6" fill="#2563eb" className="group-hover:fill-blue-700 transition-colors" />
+            <text x="14" y="15.5" dominantBaseline="middle" textAnchor="middle"
+              fontFamily="'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif"
+              fontWeight="900" fontSize="14.5" fill="white">차</text>
+          </svg>
           <span className="text-blue-600 font-bold text-lg tracking-tight group-hover:text-blue-700 transition-colors">
             차비서
           </span>

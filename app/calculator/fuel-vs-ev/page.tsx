@@ -68,7 +68,10 @@ export default function FuelVsEvPage() {
 
       <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
         <header className="space-y-2">
-          <p className="text-sm text-blue-600 font-medium">계산기</p>
+          <div className="flex items-center gap-2 flex-wrap">
+            <p className="text-sm text-blue-600 font-medium">계산기</p>
+            <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">2026-03 데이터 반영</span>
+          </div>
           <h1 className="text-2xl font-bold text-slate-900">연료비 비교 계산기</h1>
           <p className="text-[15px] text-slate-600 leading-relaxed">
             내 주행거리와 충전 환경을 넣으면 가솔린·하이브리드·전기차 중 어느 쪽이 실제로 저렴한지

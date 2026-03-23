@@ -68,7 +68,10 @@ export default function NewVsUsedPage() {
 
       <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
         <header className="space-y-2">
-          <p className="text-sm text-blue-600 font-medium">계산기</p>
+          <div className="flex items-center gap-2 flex-wrap">
+            <p className="text-sm text-blue-600 font-medium">계산기</p>
+            <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">2026-03 데이터 반영</span>
+          </div>
           <h1 className="text-2xl font-bold text-slate-900">신차 vs 중고차 총소유비</h1>
           <p className="text-[15px] text-slate-600 leading-relaxed">
             구매가 차이만 보면 판단이 틀릴 수 있습니다. 감가상각, 보험료, 정비비 차이까지 더해서
