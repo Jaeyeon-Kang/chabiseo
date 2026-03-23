@@ -72,7 +72,7 @@ export default async function GuidePage({
 
   const categoryLabel: Record<string, string> = {
     maintaining: "소모품·정비",
-    repairing: "수리비 단가표",
+    repairing: "수리비·견적",
     buying: "구매 비용 검증",
     ev: "EV 충전·유지비",
   };

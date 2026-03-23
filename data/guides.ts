@@ -186,8 +186,8 @@ export const GUIDES: Guide[] = [
         body: "자동차 구매 시 취득세 7%가 부과됩니다(비영업용 기준). 2,500만원짜리 차라면 175만원입니다. 생각보다 큰 금액입니다.\n\n전기차는 현재 취득세 한시 감면 혜택이 있습니다. 구매 시점에 정책을 반드시 확인하세요.",
       },
       {
-        heading: "2. 등록비 — 차값의 약 2%",
-        body: "번호판 취득, 각종 공채 매입비 등 등록 관련 비용이 차값의 약 2% 수준으로 발생합니다. 2,500만원 차 기준 약 50만원입니다.",
+        heading: "2. 등록비 — 공채 할인 손실 + 부대비용",
+        body: "등록 시 국민주택채권 매입 후 즉시 매도에 따른 실질 비용(차값의 약 0.8%), 번호판 발급 수수료, 인지세 등이 발생합니다. 2,500만원 차 기준 합산 25~35만원 수준입니다. 지역과 차종에 따라 차이가 있습니다.",
       },
       {
         heading: "3. 첫해 자동차 보험 — 70만~140만원",
@@ -397,7 +397,7 @@ export const GUIDES: Guide[] = [
     title: "자동차 1년 유지비 예산 짜는 법",
     description:
       "막연하게 느껴지는 자동차 유지비를 항목별로 쪼개고, 예산을 미리 잡는 방법을 정리했습니다. 연간 주행거리와 차령이 기준입니다.",
-    category: "maintaining",
+    category: "repairing",
     relatedCalculator: { label: "첫차 총예산 계산기", href: "/calculator/first-car-budget" },
     relatedGuides: ["engine-oil-interval", "long-term-car-cost", "brake-pad-signal"],
     updatedAt: "2026-03-22",

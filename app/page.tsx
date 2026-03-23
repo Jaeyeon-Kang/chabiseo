@@ -60,7 +60,7 @@ const CATEGORIES = [
   {
     href: "/category/repairing",
     icon: "🛠️",
-    label: "수리비 단가표",
+    label: "수리비·견적",
     bg: "bg-amber-50 hover:bg-amber-100",
     border: "border-amber-200 hover:border-amber-300",
     label_color: "text-amber-700",

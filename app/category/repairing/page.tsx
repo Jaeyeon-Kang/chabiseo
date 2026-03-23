@@ -4,11 +4,11 @@ import { GUIDES } from "@/data/guides";
 import { GuideCard } from "@/components/ui/GuideCard";
 
 export const metadata: Metadata = {
-  title: "수리비 단가표 — 과다 청구 및 견적 검증",
-  description: "정비소 견적의 적정성을 검증하고, 부품비와 공임 표준 단가를 기반으로 과잉 정비 및 과다 청구를 예방합니다.",
+  title: "수리비·견적 가이드 — 정비소 방문 전 필수 체크",
+  description: "정비소 견적을 받기 전에 알아야 할 것들. 과잉 정비를 피하는 방법과 연간 유지비 예산 짜는 법을 정리했습니다.",
   openGraph: {
-    title: "수리비 단가표 — 과다 청구 및 견적 검증",
-    description: "정비소 견적의 적정성을 검증하고, 부품비와 공임 표준 단가를 기반으로 과잉 정비 및 과다 청구를 예방합니다.",
+    title: "수리비·견적 가이드 — 정비소 방문 전 필수 체크",
+    description: "정비소 견적을 받기 전에 알아야 할 것들. 과잉 정비를 피하는 방법과 연간 유지비 예산 짜는 법을 정리했습니다.",
     type: "website",
   },
 };
@@ -20,10 +20,10 @@ export default function RepairingCategoryPage() {
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
       <header className="space-y-2">
         <p className="text-sm text-blue-600 font-medium">카테고리</p>
-        <h1 className="text-2xl font-bold text-slate-900">🛠️ 고장·수리</h1>
+        <h1 className="text-2xl font-bold text-slate-900">🛠️ 수리비·견적</h1>
         <p className="text-[15px] text-slate-600 leading-relaxed">
-          정비소 견적의 적정성을 검증하고, 부품비와 공임 표준 단가를 기반으로
-          과잉 정비 및 과다 청구를 예방합니다.
+          정비소 견적을 받기 전에 알아야 할 것들. 과잉 정비를 피하는 방법과
+          연간 유지비 예산 짜는 법을 정리했습니다.
         </p>
       </header>
 
