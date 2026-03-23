@@ -1,2 +1,2 @@
 export const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://chabiseo.co.kr";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.chabiseo.co.kr";
