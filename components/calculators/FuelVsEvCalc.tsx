@@ -75,7 +75,7 @@ export function FuelVsEvCalc() {
 
         <div className="space-y-2">
           <label className="flex justify-between text-sm text-slate-600">
-            <span>전기차 자가 충전 비율</span>
+            <span>전기차 집충전 비율</span>
             <span className="font-semibold text-blue-600">{homeChargeRatio}%</span>
           </label>
           <input

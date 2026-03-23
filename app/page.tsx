@@ -27,7 +27,7 @@ const CALCULATORS = [
     icon: "🔄",
     iconBg: "bg-violet-100",
     title: "신차 vs 중고차 5년 총비용",
-    desc: "중고차가 무조건 저렴한 건 아닙니다. 수리비·감가상각까지 더한 5년 총소유비로 실제 손익을 낱낱이 분해합니다.",
+    desc: "중고차가 무조건 저렴한 건 아닙니다. 수리비·감가상각까지 더한 5년 총소유비로 실제 손익을 항목별로 비교합니다.",
     badge: null,
   },
 ] as const;
@@ -86,8 +86,8 @@ export default function HomePage() {
           <span className="text-blue-600">견적 전에</span> 먼저 확인하세요
         </h1>
         <p className="text-[15px] text-slate-500 max-w-xl leading-relaxed">
-          딜러와 정비소 견적을 받기 전에 먼저 확인하세요.
-          표준 비용 범위를 알면 과다 청구를 그냥 넘기지 않게 됩니다.
+          표준 비용 범위를 미리 알면 과다 청구를 바로 걸러낼 수 있습니다.
+          계산기와 가이드로 내 상황에 맞는 적정 비용을 확인하세요.
         </p>
         <div className="flex items-center gap-2 flex-wrap">
           {["가이드 12개", "계산기 3종", "매월 업데이트"].map((s) => (

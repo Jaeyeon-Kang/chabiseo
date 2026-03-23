@@ -26,7 +26,7 @@ export default function PrivacyPage() {
         <section className="space-y-2">
           <h2 className="text-base font-semibold text-slate-800">광고 및 분석</h2>
           <p>
-            본 사이트는 Google AdSense 및 Google Analytics를 사용할 수 있습니다.
+            본 사이트는 Google AdSense 및 Google Analytics를 사용합니다.
             이 서비스들은 쿠키를 사용하여 광고 효과를 측정하고 사이트 이용 통계를 수집합니다.
             Google의 개인정보 보호 정책은 Google 웹사이트에서 확인하실 수 있습니다.
           </p>
