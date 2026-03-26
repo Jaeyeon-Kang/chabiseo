@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
   verification: {
     google: "google68c300082e77cfeb",
-    other: { "naver-site-verification": ["6d81c15f2b2554cc8f474fa457dffb8f9957b8af"] },
+    other: { "naver-site-verification": ["5431c888a9ccae2187ea6f86f37fc11f5e9aad6a"] },
   },
   alternates: { canonical: "/" },
   openGraph: {
