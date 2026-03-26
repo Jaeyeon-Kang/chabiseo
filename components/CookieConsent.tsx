@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Script from "next/script";
 
-const CONSENT_KEY = "chabiseo_cookie_consent";
+const CONSENT_KEY = "chagyebu_cookie_consent";
 
 export function CookieConsent() {
   const [consent, setConsent] = useState<boolean | null>(null);

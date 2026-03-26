@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "차비서 — 자동차 비용 판단 가이드",
+  title: "차계부 — 자동차 비용 판단 가이드",
   description:
     "첫차 총예산, 연료비 비교(가솔린·하이브리드·EV), 신차 vs 중고차 총소유비 계산기와 소모품·정비·수리비 가이드를 무료로 제공합니다.",
 };

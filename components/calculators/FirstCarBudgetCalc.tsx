@@ -8,6 +8,7 @@ import {
 } from "@/lib/calc-first-car-budget";
 import { CostBreakdownCard } from "@/components/ui/CostBreakdownCard";
 import { AssumptionsAccordion } from "@/components/ui/AssumptionsAccordion";
+import { ShareButtons } from "@/components/ui/ShareButtons";
 import { useCountUp } from "@/hooks/useCountUp";
 
 const FUEL_OPTIONS: { value: FuelType; label: string }[] = [
@@ -151,7 +152,8 @@ export function FirstCarBudgetCalc() {
           />
 
           <AssumptionsAccordion assumptions={result.assumptions} />
-          <p className="text-xs text-slate-400 leading-relaxed">
+          <ShareButtons title="첫차 총예산 계산기 — 차계부" description="취등록세·보험·연료비·소모품까지 첫해 실지출을 계산한 결과입니다." />
+          <p className="text-xs text-slate-400 leading-relaxed mt-4">
             본 산출 결과는 공공 통계 및 표준 공임표 기반 추정치이며, 실제 청구 금액과 차이가 발생할 수 있습니다.
             본 사이트는 해당 결과에 대한 법적 책임을 지지 않습니다.
           </p>

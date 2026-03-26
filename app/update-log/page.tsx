@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "업데이트 기록 | 차비서",
-  description: "차비서 계산기와 가이드의 데이터 업데이트 이력을 확인할 수 있습니다.",
+  title: "업데이트 기록 | 차계부",
+  description: "차계부 계산기와 가이드의 데이터 업데이트 이력을 확인할 수 있습니다.",
 };
 
 const UPDATES = [
@@ -47,7 +47,7 @@ export default function UpdateLogPage() {
         <p className="text-sm text-blue-600 font-medium">기록</p>
         <h1 className="text-2xl font-bold text-slate-900">업데이트 기록</h1>
         <p className="text-[15px] text-slate-600 leading-relaxed">
-          차비서의 데이터와 기능 변경 이력입니다. 연료 단가, 충전 요금, 세금 기준처럼
+          차계부의 데이터와 기능 변경 이력입니다. 연료 단가, 충전 요금, 세금 기준처럼
           변하는 수치는 월 1~2회 검토 후 반영합니다.
         </p>
       </header>

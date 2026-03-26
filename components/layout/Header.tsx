@@ -23,7 +23,7 @@ export function Header() {
               fontWeight="900" fontSize="14.5" fill="white">차</text>
           </svg>
           <span className="text-blue-600 font-bold text-lg tracking-tight group-hover:text-blue-700 transition-colors">
-            차비서
+            차계부
           </span>
           <span className="hidden sm:block text-xs text-slate-400">
             자동차 비용 계산기 & 정비비 단가표

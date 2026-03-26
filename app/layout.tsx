@@ -8,8 +8,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "차비서 — 자동차 비용 판단 가이드",
-    template: "%s | 차비서",
+    default: "차계부 — 자동차 비용 판단 가이드",
+    template: "%s | 차계부",
   },
   description:
     "차 살 때, 탈 때, 고칠 때 드는 비용을 미리 파악할 수 있는 계산기와 가이드 모음. 첫차 총예산, 연료비 비교, 정비비 범위를 한눈에.",
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "/" },
   openGraph: {
-    title: "차비서 — 자동차 비용 판단 가이드",
+    title: "차계부 — 자동차 비용 판단 가이드",
     description: "차 살 때·탈 때·정비할 때, 돈 문제를 숫자로 바로 이해하세요.",
     locale: "ko_KR",
     type: "website",
-    siteName: "차비서",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "차비서 — 자동차 비용 판단 가이드" }],
+    siteName: "차계부",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "차계부 — 자동차 비용 판단 가이드" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "차비서 — 자동차 비용 판단 가이드",
+    title: "차계부 — 자동차 비용 판단 가이드",
     description: "차 살 때·탈 때·정비할 때, 돈 문제를 숫자로 바로 이해하세요.",
     images: ["/og-image.png"],
   },

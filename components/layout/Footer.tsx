@@ -12,11 +12,11 @@ export function Footer() {
           <Link href="/disclaimer" className="hover:text-slate-600 transition-colors">면책고지</Link>
         </div>
         <p className="text-xs text-slate-400 leading-relaxed">
-          차비서의 수치는 제조사 기준, 공공 통계, 서비스센터 공시가를 바탕으로 한 예상 범위입니다.
+          차계부의 수치는 제조사 기준, 공공 통계, 서비스센터 공시가를 바탕으로 한 예상 범위입니다.
           실제 비용은 차종·지역·운행 조건에 따라 다릅니다. 구체적인 견적은 전문 정비사에게 확인하세요.
         </p>
         <p className="text-xs text-slate-400">데이터 반영일: 2026-03-23 · 유류비·보험료·정비 단가 기준</p>
-        <p className="text-xs text-slate-400">© 2026 차비서</p>
+        <p className="text-xs text-slate-400">© 2026 차계부</p>
       </div>
     </footer>
   );

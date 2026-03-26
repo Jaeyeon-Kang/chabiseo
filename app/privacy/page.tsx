@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "개인정보처리방침 | 차비서",
+  title: "개인정보처리방침 | 차계부",
 };
 
 export default function PrivacyPage() {
@@ -13,7 +13,7 @@ export default function PrivacyPage() {
       </header>
 
       <div className="space-y-6 text-[15px] text-slate-600 leading-relaxed">
-        <p>차비서는 현재 회원 가입 기능이 없으며, 개인을 식별할 수 있는 정보를 수집하지 않습니다.</p>
+        <p>차계부는 현재 회원 가입 기능이 없으며, 개인을 식별할 수 있는 정보를 수집하지 않습니다.</p>
 
         <section className="space-y-2">
           <h2 className="text-base font-semibold text-slate-800">수집 정보</h2>

@@ -84,8 +84,8 @@ export default async function GuidePage({
     description: guide.description,
     datePublished: guide.publishedAt ?? guide.updatedAt,
     dateModified: guide.updatedAt,
-    author: { "@type": "Organization", name: "차비서", url: BASE_URL },
-    publisher: { "@type": "Organization", name: "차비서", url: BASE_URL },
+    author: { "@type": "Organization", name: "차계부", url: BASE_URL },
+    publisher: { "@type": "Organization", name: "차계부", url: BASE_URL },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/guide/${slug}` },
   };
 

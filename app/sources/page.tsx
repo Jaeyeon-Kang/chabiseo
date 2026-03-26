@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "출처 및 데이터 기준 | 차비서",
-  description: "차비서 계산기와 가이드에서 사용하는 데이터의 출처와 기준을 안내합니다.",
+  title: "출처 및 데이터 기준 | 차계부",
+  description: "차계부 계산기와 가이드에서 사용하는 데이터의 출처와 기준을 안내합니다.",
 };
 
 const SOURCES = [
@@ -49,7 +49,7 @@ export default function SourcesPage() {
         <p className="text-sm text-blue-600 font-medium">출처</p>
         <h1 className="text-2xl font-bold text-slate-900">출처 및 데이터 기준</h1>
         <p className="text-[15px] text-slate-600 leading-relaxed">
-          차비서의 계산기와 가이드에서 사용하는 모든 수치는 아래 공공 통계 및 공시 자료를 기반으로 합니다.
+          차계부의 계산기와 가이드에서 사용하는 모든 수치는 아래 공공 통계 및 공시 자료를 기반으로 합니다.
           연료 단가와 충전 요금은 월 1~2회 검토 후 반영합니다.
         </p>
       </header>

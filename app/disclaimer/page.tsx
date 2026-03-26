@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "면책고지 | 차비서",
-  description: "차비서 사이트에서 제공하는 정보의 정확성과 활용에 관한 면책 고지입니다.",
+  title: "면책고지 | 차계부",
+  description: "차계부 사이트에서 제공하는 정보의 정확성과 활용에 관한 면책 고지입니다.",
 };
 
 export default function DisclaimerPage() {
@@ -15,7 +15,7 @@ export default function DisclaimerPage() {
 
       <div className="space-y-4 text-[15px] text-slate-600 leading-relaxed">
         <p>
-          차비서(이하 "본 사이트")에서 제공하는 모든 정보와 계산 결과는
+          차계부(이하 "본 사이트")에서 제공하는 모든 정보와 계산 결과는
           교육적·참고적 목적으로만 제공됩니다.
         </p>
         <p>
@@ -24,7 +24,7 @@ export default function DisclaimerPage() {
         </p>
         <p>
           본 사이트의 정보를 근거로 한 차량 구매, 정비, 보험 가입 등의 결정에 대해
-          차비서는 어떠한 법적 책임도 지지 않습니다.
+          차계부는 어떠한 법적 책임도 지지 않습니다.
         </p>
         <p>
           중요한 비용 결정은 반드시 전문 정비사, 보험 설계사, 공인된 딜러에게 직접 확인하시기 바랍니다.

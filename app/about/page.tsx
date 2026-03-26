@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "차비서 소개",
-  description: "차비서는 자동차 비용을 미리 파악할 수 있는 계산기와 가이드 모음입니다.",
+  title: "차계부 소개",
+  description: "차계부는 자동차 비용을 미리 파악할 수 있는 계산기와 가이드 모음입니다.",
 };
 
 export default function AboutPage() {
@@ -10,12 +10,12 @@ export default function AboutPage() {
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-8">
       <header className="space-y-2">
         <p className="text-sm text-blue-600 font-medium">소개</p>
-        <h1 className="text-2xl font-bold text-slate-900">차비서 소개</h1>
+        <h1 className="text-2xl font-bold text-slate-900">차계부 소개</h1>
       </header>
 
       <div className="space-y-6 text-[15px] text-slate-600 leading-relaxed">
         <section className="space-y-3">
-          <h2 className="text-base font-semibold text-slate-800">차비서가 뭐예요?</h2>
+          <h2 className="text-base font-semibold text-slate-800">차계부가 뭐예요?</h2>
           <p>
             자동차 관련 비용을 미리 파악할 수 있는 계산기와 가이드 모음입니다.
             "이 차 사면 한 달에 얼마나 드나", "브레이크패드 지금 갈아야 하나", "전기차가 진짜 더 저렴한가"처럼
