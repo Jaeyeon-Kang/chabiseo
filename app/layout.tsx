@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { BASE_URL } from "@/lib/site-url";
 import "./globals.css";
 
@@ -55,6 +56,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
+        <GoogleAnalytics />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
