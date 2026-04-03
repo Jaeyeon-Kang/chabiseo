@@ -29,7 +29,7 @@ export default function DisclaimerPage() {
         <p>
           중요한 비용 결정은 반드시 전문 정비사, 보험 설계사, 공인된 딜러에게 직접 확인하시기 바랍니다.
         </p>
-        <p className="text-sm text-slate-400">최종 업데이트: 2026-03-22</p>
+        <p className="text-sm text-slate-400">최종 업데이트: 2026-04-03</p>
       </div>
     </div>
   );

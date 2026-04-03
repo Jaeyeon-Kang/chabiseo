@@ -17,7 +17,7 @@
       "note": "합성유 기준 상단, 광유 기준 하단"
     },
     {
-      "key": "brakePad",
+      "key": "brakepad",
       "name": "브레이크패드 교환 (앞 1쌍)",
       "totalMin": 70000,
       "totalMax": 210000,

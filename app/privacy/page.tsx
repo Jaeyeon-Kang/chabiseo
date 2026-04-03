@@ -40,7 +40,7 @@ export default function PrivacyPage() {
           </p>
         </section>
 
-        <p className="text-sm text-slate-400">최종 업데이트: 2026-03-22</p>
+        <p className="text-sm text-slate-400">최종 업데이트: 2026-04-03</p>
       </div>
     </div>
   );
