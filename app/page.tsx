@@ -92,7 +92,7 @@ export default function HomePage() {
           계산기와 가이드로 내 상황에 맞는 적정 비용을 확인하세요.
         </p>
         <div className="flex items-center gap-2 flex-wrap">
-          {["가이드 12개", "계산기 3종", "매월 업데이트"].map((s) => (
+          {["가이드 16개", "계산기 3종", "매월 업데이트"].map((s) => (
             <span key={s} className="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">
               {s}
             </span>

@@ -98,7 +98,7 @@ export function FirstCarBudgetCalc() {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm text-slate-600">월정기 주차 비용</label>
+          <label className="text-sm text-slate-600">정기 주차비</label>
           <div className="flex gap-2">
             {[
               { val: true, label: "무료 (자가·아파트)" },

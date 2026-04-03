@@ -5,10 +5,10 @@ import { GuideCard } from "@/components/ui/GuideCard";
 
 export const metadata: Metadata = {
   title: "수리비·견적 가이드 — 정비소 방문 전 필수 체크",
-  description: "정비소 견적을 받기 전에 알아야 할 것들. 과잉 정비를 피하는 방법과 연간 유지비 예산 짜는 법을 정리했습니다.",
+  description: "정비소 견적을 받기 전에 알아야 할 것들. 과잉 정비를 피하는 방법과 수리 항목을 판단하는 기준을 정리했습니다.",
   openGraph: {
     title: "수리비·견적 가이드 — 정비소 방문 전 필수 체크",
-    description: "정비소 견적을 받기 전에 알아야 할 것들. 과잉 정비를 피하는 방법과 연간 유지비 예산 짜는 법을 정리했습니다.",
+    description: "정비소 견적을 받기 전에 알아야 할 것들. 과잉 정비를 피하는 방법과 수리 항목을 판단하는 기준을 정리했습니다.",
     type: "website",
   },
 };
@@ -23,7 +23,7 @@ export default function RepairingCategoryPage() {
         <h1 className="text-2xl font-bold text-slate-900">🛠️ 수리비·견적</h1>
         <p className="text-[15px] text-slate-600 leading-relaxed">
           정비소 견적을 받기 전에 알아야 할 것들. 과잉 정비를 피하는 방법과
-          연간 유지비 예산 짜는 법을 정리했습니다.
+          수리 항목을 판단하는 기준을 정리했습니다.
         </p>
       </header>
 

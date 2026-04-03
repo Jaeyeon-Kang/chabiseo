@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
       <div className="space-y-4 text-[15px] text-slate-600 leading-relaxed">
         <p>
           차계부(이하 "본 사이트")에서 제공하는 모든 정보와 계산 결과는
-          교육적·참고적 목적으로만 제공됩니다.
+          교육·참고 목적으로만 제공됩니다.
         </p>
         <p>
           본 사이트의 수치는 제조사 기준, 공공 통계, 서비스센터 공시가를 바탕으로 한 추정 범위이며,
